@@ -10,6 +10,9 @@ import { HomeBannerTextComponent } from './components/home-banner-text/home-bann
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,12 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     TitleWithTextComponent,
     HomeBannerImageComponent,
     HomeBannerTextComponent,
+    HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'nl',
