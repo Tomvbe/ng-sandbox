@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  ng-sandbox:
+    container_name: ng-sandbox
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 8080:80
