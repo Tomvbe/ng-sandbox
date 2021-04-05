@@ -7,6 +7,9 @@ import { TextRightImageLeftComponent } from './containers/text-right-image-left/
 import { TitleWithTextComponent } from './components/title-with-text/title-with-text.component';
 import { HomeBannerImageComponent } from './components/home-banner-image/home-banner-image.component';
 import { HomeBannerTextComponent } from './components/home-banner-text/home-banner-text.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,23 @@ import { HomeBannerTextComponent } from './components/home-banner-text/home-bann
     HomeBannerTextComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'nl',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
