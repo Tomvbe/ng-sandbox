@@ -15,6 +15,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import {AppRoutingModule} from './app-routing.module';
 import { ObservablePageComponent } from './pages/observable-page/observable-page.component';
 import { HotAndColdObservablesComponent } from './pages/observable-page/children/hot-and-cold-observables/hot-and-cold-observables.component';
+import { NavItemComponent } from './components/nav-item/nav-item.component';
+import { NavListComponent } from './components/nav-list/nav-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { HotAndColdObservablesComponent } from './pages/observable-page/children
     ContactComponent,
     ObservablePageComponent,
     HotAndColdObservablesComponent,
+    NavItemComponent,
+    NavListComponent,
   ],
   imports: [
     BrowserModule,
