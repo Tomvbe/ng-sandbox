@@ -13,6 +13,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import {AppRoutingModule} from './app-routing.module';
+import { ObservablePageComponent } from './pages/observable-page/observable-page.component';
+import { HotAndColdObservablesComponent } from './pages/observable-page/children/hot-and-cold-observables/hot-and-cold-observables.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {AppRoutingModule} from './app-routing.module';
     HomeBannerTextComponent,
     HomeComponent,
     ContactComponent,
+    ObservablePageComponent,
+    HotAndColdObservablesComponent,
   ],
   imports: [
     BrowserModule,
