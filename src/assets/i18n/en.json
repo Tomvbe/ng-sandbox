@@ -1,3 +1,8 @@
 {
-  "title": "Ng sandbox"
+  "contact": "contact",
+  "observables": "observables",
+  "hot-and-cold": "hot-and-cold",
+
+  "title": "Ng sandbox",
+  "contact-works": "contact works!"
 }

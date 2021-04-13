@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core';
   selector: 'app-observable-page',
   template: `
     <app-nav-list>
-      <app-nav-item id="hot-and-cold-tab" path="hot-and-cold" navText="Hot and cold observables"></app-nav-item>
+      <app-nav-item id="hot-and-cold-tab" [path]="'hot-and-cold' | localize" navText="Hot and cold observables"></app-nav-item>
     </app-nav-list>
     <router-outlet></router-outlet>
   `,

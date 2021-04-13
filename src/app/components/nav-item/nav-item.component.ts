@@ -16,7 +16,7 @@ export class NavItemComponent implements OnInit {
   id: string;
 
   @Input()
-  path: string;
+  path: string | any[];
 
   @Input()
   navText: string;
