@@ -18,6 +18,11 @@ import { HotAndColdObservablesComponent } from './pages/observable-page/children
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { NavListComponent } from './components/nav-list/nav-list.component';
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,25 +38,20 @@ import { NavListComponent } from './components/nav-list/nav-list.component';
     NavItemComponent,
     NavListComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'nl',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            defaultLanguage: 'nl',
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
-}
