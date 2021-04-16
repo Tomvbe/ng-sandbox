@@ -2,7 +2,6 @@
   <app-nav-item id="home-tab" path="" navText="Home"></app-nav-item>
   <app-nav-item id="contact-tab" [path]="'/contact' | localize" navText="Contact"></app-nav-item>
   <app-nav-item id="observables-tab" [path]="'/observables' | localize" navText="Observables"></app-nav-item>
-  <button type="button" (click)="changeLanguage('en')">translate to EN</button>
-  <button type="button" (click)="changeLanguage('nl')">translate to NL</button>
+  <app-language></app-language>
 </app-nav-list>
 <router-outlet></router-outlet>

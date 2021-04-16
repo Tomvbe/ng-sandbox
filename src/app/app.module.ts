@@ -17,6 +17,7 @@ import { ObservablePageComponent } from './pages/observable-page/observable-page
 import { HotAndColdObservablesComponent } from './pages/observable-page/children/hot-and-cold-observables/hot-and-cold-observables.component';
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { NavListComponent } from './components/nav-list/nav-list.component';
+import {SharedModule} from './shared/shared.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -38,19 +39,20 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NavItemComponent,
     NavListComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-            defaultLanguage: 'nl',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'nl',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

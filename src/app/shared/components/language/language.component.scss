@@ -1,0 +1,45 @@
+.language-selector {
+  cursor: pointer;
+}
+
+.language-selector {
+  .dropdown-toggle {
+    display: inline-block;
+    padding: 9px 10px;
+    background-clip: padding-box;
+  }
+
+  .dropdown-toggle img {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .dropdown-menu {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0 3px 3px 3px;
+  }
+
+  .dropdown-menu {
+    li {
+      a {
+        margin: 0;
+        display: block;
+        border-radius: 0;
+        background-clip: padding-box;
+        padding: 10px 10px;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

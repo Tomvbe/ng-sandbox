@@ -1,0 +1,12 @@
+<div class="dropdown language-selector">
+  <a class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+    <img alt="{{selectedLanguage?.key}}" src="assets/img/flag-{{selectedLanguage?.key}}.png" />
+  </a>
+  <ul class="dropdown-menu pull-right">
+    <li *ngFor="let item of languages">
+      <a (click)="onChangeLanguage(item.key)">
+        <img alt="{{ item.key }}" src="assets/img/flag-{{ item.key }}.png" />
+      </a>
+    </li>
+  </ul>
+</div>
