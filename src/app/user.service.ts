@@ -14,4 +14,8 @@ export class UserService {
     return this.http.get<User[]>('assets/users.json');
   }
 
+  getInterceptedUsers(): Observable<User[]> {
+    return this.http.get<User[]>('intercepted-user');
+  }
+
 }

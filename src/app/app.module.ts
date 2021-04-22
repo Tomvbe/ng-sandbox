@@ -8,7 +8,7 @@ import { TitleWithTextComponent } from './components/title-with-text/title-with-
 import { HomeBannerImageComponent } from './components/home-banner-image/home-banner-image.component';
 import { HomeBannerTextComponent } from './components/home-banner-text/home-banner-text.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -18,6 +18,7 @@ import { HotAndColdObservablesComponent } from './pages/observable-page/children
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { NavListComponent } from './components/nav-list/nav-list.component';
 import {SharedModule} from './shared/shared.module';
+import {HttpConfigInterceptor} from './interceptors/httpconfig.interceptor';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -53,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     }),
     SharedModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
